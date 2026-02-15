@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Lokesh Chhawry - Premier Physiotherapy Clinic | Faridabad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a2f23;
+            --primary-light: #1a5f4a;
+            --accent: #d4a574;
+            --accent-dark: #b8935f;
+            --background: #fafaf9;
+            --background-dark: #f5f5f4;
+            --text: #1a1a1a;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --shadow-strong: rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 1.5rem 0;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .logo-subtext {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.85rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(26, 95, 74, 0.2);
+        }
+
+        .icon-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.425rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 45px;
+        }
+
+        .icon-button:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(26, 95, 74, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(165deg, var(--primary) 0%, #0d3a2a 50%, var(--primary-light) 100%);
+            padding: 8rem 3rem 10rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-50px, 50px) scale(1.1); }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--background), transparent);
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        .hero-text .highlight {
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            font-weight: 300;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 32px rgba(212, 165, 116, 0.3);
+            background: var(--accent-dark);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .hero-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+            position: relative;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--primary));
+            border-radius: 24px 24px 0 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .hero-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.75rem;
+            padding: 1.25rem;
+            background: var(--background);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            background: var(--background-dark);
+            transform: translateX(5px);
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-text strong {
+            display: block;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .info-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px var(--shadow);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 48px var(--shadow-strong);
+        }
+
+        .service-card:hover::before {
+            opacity: 0.03;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+            padding: 8rem 3rem;
+        }
+
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-image-container {
+            position: relative;
+        }
+
+        .about-image-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 24px;
+            z-index: 0;
+        }
+
+        .about-image-container img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .credentials {
+            background: var(--background);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin-top: 2.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .credential-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .credential-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .check-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            flex-shrink: 0;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .credential-item span {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        /* Appointment Section */
+        .appointment {
+            padding: 8rem 3rem;
+            background: linear-gradient(165deg, var(--primary) 0%, #0d3a2a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .appointment-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 32px;
+            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .appointment-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .appointment-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .appointment-content .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--background);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--primary);
+            color: var(--white);
+            padding: 1.4rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.02em;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(26, 95, 74, 0.3);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 3rem;
+            background: var(--background);
+        }
+
+        .contact-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+        }
+
+        .contact-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 4px 24px var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px var(--shadow-strong);
+        }
+
+        .contact-item-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item-text h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .contact-item-text p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .map-container {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px var(--shadow);
+            height: 100%;
+            min-height: 500px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.5), transparent);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-content p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(212, 165, 116, 0.3);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 500;
+            box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            nav {
+                padding: 0 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .icon-button {
+                display: none;
+            }
+
+            .hero {
+                padding: 6rem 2rem 8rem;
+            }
+
+            .hero-content,
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .section-header h2,
+            .about-text h2 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 2.25rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .appointment-content {
+                padding: 2.5rem 2rem;
+            }
+
+            .services,
+            .about,
+            .appointment,
+            .contact {
+                padding: 5rem 1.5rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div>
+                    <div class="logo-text">Dr. Lokesh Chhawry</div>
+                    <div class="logo-subtext">Physiotherapy Specialist</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+                <a href="tel:+919999999999" class="icon-button" title="Call Now">
+                    📞
+                </a>
+                <a href="https://wa.me/919999999999" class="icon-button" title="WhatsApp">
+                    💬
+                </a>
+                <a href="#appointment" class="cta-button">Book Appointment</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Restore Your <span class="highlight">Movement</span>, Reclaim Your Life</h1>
+                <p>Experience world-class physiotherapy care with evidence-based treatments designed for your complete recovery and optimal wellness.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Happy Patients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#appointment" class="btn-primary">Schedule Consultation</a>
+                    <a href="#services" class="btn-secondary">Explore Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <h3>Clinic Information</h3>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <strong>Location</strong>
+                            Opposite Green Power Residency<br>Sector 76, Faridabad, Haryana
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div class="info-text">
+                            <strong>Working Hours</strong>
+                            Mon - Sat: 9:00 AM - 8:00 PM<br>
+                            Sunday: By Appointment Only
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🏥</div>
+                        <div class="info-text">
+                            <strong>Facilities</strong>
+                            State-of-the-art equipment<br>
+                            Modern treatment rooms
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header fade-in">
+            <span class="section-label">Our Expertise</span>
+            <h2>Comprehensive Treatment Solutions</h2>
+            <p>Evidence-based therapies tailored to accelerate your recovery and enhance your quality of life</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-icon">🏃</div>
+                <h3>Sports Rehabilitation</h3>
+                <p>Advanced recovery protocols for athletes and active individuals. From acute injuries to performance optimization, get back to peak condition faster.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🦴</div>
+                <h3>Orthopedic Care</h3>
+                <p>Specialized treatment for musculoskeletal conditions including arthritis, chronic pain, and post-operative rehabilitation with proven results.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🧠</div>
+                <h3>Neuro Rehabilitation</h3>
+                <p>Expert care for neurological conditions including stroke recovery, Parkinson's management, and mobility restoration programs.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">💆</div>
+                <h3>Manual Therapy</h3>
+                <p>Precision hands-on techniques for joint mobilization, myofascial release, and soft tissue manipulation for immediate pain relief.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">⚡</div>
+                <h3>Advanced Modalities</h3>
+                <p>Cutting-edge electrotherapy, ultrasound, and laser treatments to accelerate healing and reduce inflammation effectively.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🎯</div>
+                <h3>Therapeutic Exercise</h3>
+                <p>Personalized movement programs designed to build strength, restore function, and prevent future injuries through targeted training.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-image-container fade-in">
+                <img src="data:image/svg+xml,%3Csvg width='600' height='700' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230a2f23;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231a5f4a;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='700' fill='url(%23grad1)'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-size='48' fill='white' font-family='serif' font-weight='bold'%3EDr. Lokesh Chhawry%3C/text%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='24' fill='%23d4a574' font-family='sans-serif'%3EPhysiotherapy Specialist%3C/text%3E%3C/svg%3E" alt="Dr. Lokesh Chhawry">
+            </div>
+            <div class="about-text fade-in">
+                <h2>Your Partner in Recovery & Wellness</h2>
+                <p>Dr. Lokesh Chhawry brings extensive expertise and a compassionate approach to physiotherapy care. With advanced training in orthopedic and sports rehabilitation, Dr. Chhawry has helped hundreds of patients overcome pain and regain their active lifestyles.</p>
+                <p>Our clinic combines state-of-the-art technology with time-tested manual therapy techniques, ensuring you receive the most effective treatment available. We believe in treating the whole person, not just the symptoms, with customized care plans designed for your unique needs.</p>
+                <p>Every treatment session is an investment in your long-term health and mobility. We're committed to not only alleviating your current discomfort but also equipping you with the knowledge and tools to prevent future injuries.</p>
+                <div class="credentials">
+                    <div class="credential-item">
+                        <div class="check-icon">✓</div>
+                        <span>Board Certified Physiotherapist</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="check-icon">✓</div>
+                        <span>Advanced Orthopedic & Sports Certification</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="check-icon">✓</div>
+                        <span>15+ Years Clinical Excellence</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="check-icon">✓</div>
+                        <span>Evidence-Based Treatment Protocols</span>
+                    </div>
+                    <div class="credential-item">
+                        <div class="check-icon">✓</div>
+                        <span>Personalized Care Philosophy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="appointment">
+        <div class="appointment-content fade-in">
+            <div class="appointment-header">
+                <h2>Book Your Consultation</h2>
+                <p class="subtitle">Take the first step towards pain-free living. Schedule your personalized assessment today.</p>
+            </div>
+            <div class="success-message" id="successMessage">
+                ✓ Thank you! Your appointment request has been received. We'll contact you within 24 hours to confirm your session.
+            </div>
+            <form id="appointmentForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="time">Preferred Time *</label>
+                        <select id="time" name="time" required>
+                            <option value="">Select time slot</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                            <option value="17:00">05:00 PM</option>
+                            <option value="18:00">06:00 PM</option>
+                            <option value="19:00">07:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Treatment Type *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select service</option>
+                            <option value="sports">Sports Rehabilitation</option>
+                            <option value="orthopedic">Orthopedic Care</option>
+                            <option value="neurological">Neuro Rehabilitation</option>
+                            <option value="manual">Manual Therapy</option>
+                            <option value="modalities">Advanced Modalities</option>
+                            <option value="exercise">Therapeutic Exercise</option>
+                            <option value="consultation">General Consultation</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Describe Your Condition</label>
+                    <textarea id="message" name="message" placeholder="Please share details about your symptoms, pain level, and any previous treatments..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Confirm Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2 class="fade-in">Visit Our Clinic</h2>
+                <div class="contact-item fade-in">
+                    <div class="contact-item-icon">📍</div>
+                    <div class="contact-item-text">
+                        <h3>Address</h3>
+                        <p>Opposite Green Power Residency<br>Sector 76, Faridabad<br>Haryana 121002, India</p>
+                    </div>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-item-icon">📞</div>
+                    <div class="contact-item-text">
+                        <h3>Contact</h3>
+                        <p>Call us for appointments and inquiries<br>Available during working hours<br>Emergency consultations available</p>
+                    </div>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-item-icon">⏰</div>
+                    <div class="contact-item-text">
+                        <h3>Operating Hours</h3>
+                        <p>Monday - Saturday: 9:00 AM - 8:00 PM<br>Sunday: By Appointment Only<br>Last appointment at 7:30 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container fade-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.123456789!2d77.123456!3d28.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDA3JzI0LjQiTiA3N8KwMDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Dr. Lokesh Chhawry</div>
+            <p>Premier Physiotherapy Care in Faridabad</p>
+            <div class="social-links">
+                <a href="#" class="social-link">📘</a>
+                <a href="#" class="social-link">📷</a>
+                <a href="#" class="social-link">💼</a>
+                <a href="#" class="social-link">📧</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Lokesh Chhawry Physiotherapy Clinic. All rights reserved.</p>
+                <p style="margin-top: 0.5rem;">Committed to Excellence in Movement & Recovery</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Log data (in production, send to backend)
+            console.log('Appointment Request:', data);
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 6 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 6000);
+            
+            // Smooth scroll to message
+            successMessage.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        });
+
+        // Set minimum date to today
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add stagger delay to service cards
+        document.querySelectorAll('.service-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.4}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
