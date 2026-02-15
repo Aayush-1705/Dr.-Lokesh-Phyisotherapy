@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Lokesh Chhawry - Premier Physiotherapy Clinic | Faridabad</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🏥</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -81,6 +82,14 @@
             font-weight: 700;
             color: var(--primary);
             letter-spacing: -0.02em;
+        }
+
+        .logo-qualification {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-top: 0.15rem;
         }
 
         .logo-subtext {
@@ -169,6 +178,15 @@
             background: var(--primary-light);
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(26, 95, 74, 0.2);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+            box-shadow: 0 8px 16px rgba(37, 211, 102, 0.3);
         }
 
         /* Hero Section */
@@ -525,6 +543,117 @@
             font-weight: 400;
             position: relative;
             z-index: 1;
+        }
+
+        /* Advanced Treatments Section */
+        .advanced-treatments {
+            padding: 8rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--white);
+        }
+
+        .advanced-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .advanced-card {
+            background: var(--background);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px var(--shadow);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .advanced-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 48px var(--shadow-strong);
+        }
+
+        .advanced-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .advanced-placeholder {
+            font-size: 4rem;
+            opacity: 0.3;
+        }
+
+        .advanced-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 1.5rem 2rem 1rem;
+            font-weight: 700;
+        }
+
+        .advanced-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-weight: 400;
+            padding: 0 2rem 2rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 8rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--background);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/3;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px var(--shadow);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 24px 48px var(--shadow-strong);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .gallery-placeholder span {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .gallery-placeholder p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.8;
         }
 
         /* About Section */
@@ -930,6 +1059,14 @@
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .advanced-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 968px) {
@@ -969,6 +1106,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .advanced-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
             .form-row {
                 grid-template-columns: 1fr;
             }
@@ -994,7 +1139,9 @@
             .services,
             .about,
             .appointment,
-            .contact {
+            .contact,
+            .advanced-treatments,
+            .gallery {
                 padding: 5rem 1.5rem;
             }
         }
@@ -1019,6 +1166,7 @@
             <div class="logo">
                 <div>
                     <div class="logo-text">Dr. Lokesh Chhawry</div>
+                    <div class="logo-qualification">BPT, MPT (Ortho)</div>
                     <div class="logo-subtext">Physiotherapy Specialist</div>
                 </div>
             </div>
@@ -1032,8 +1180,10 @@
                 <a href="tel:+919999999999" class="icon-button" title="Call Now">
                     📞
                 </a>
-                <a href="https://wa.me/919999999999" class="icon-button" title="WhatsApp">
-                    💬
+                <a href="https://wa.me/919999999999" class="icon-button whatsapp-btn" title="WhatsApp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
                 </a>
                 <a href="#appointment" class="cta-button">Book Appointment</a>
             </div>
@@ -1107,34 +1257,199 @@
         </div>
         <div class="services-grid">
             <div class="service-card fade-in">
-                <div class="service-icon">🏃</div>
-                <h3>Sports Rehabilitation</h3>
-                <p>Advanced recovery protocols for athletes and active individuals. From acute injuries to performance optimization, get back to peak condition faster.</p>
+                <div class="service-icon">❄️</div>
+                <h3>Frozen Shoulder</h3>
+                <p>Specialized treatment for adhesive capsulitis to restore shoulder mobility and reduce pain through advanced manual therapy techniques.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🎾</div>
+                <h3>Tennis Elbow</h3>
+                <p>Expert care for lateral epicondylitis with targeted exercises and therapeutic modalities to eliminate elbow pain and restore function.</p>
             </div>
             <div class="service-card fade-in">
                 <div class="service-icon">🦴</div>
-                <h3>Orthopedic Care</h3>
-                <p>Specialized treatment for musculoskeletal conditions including arthritis, chronic pain, and post-operative rehabilitation with proven results.</p>
+                <h3>Cervical Pain</h3>
+                <p>Comprehensive neck pain management combining manual therapy, posture correction, and strengthening exercises for lasting relief.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🔬</div>
+                <h3>Sciatica</h3>
+                <p>Advanced treatment protocols for sciatic nerve pain, addressing the root cause and providing effective pain management strategies.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">💪</div>
+                <h3>Low Back Pain</h3>
+                <p>Evidence-based approaches to treat acute and chronic lower back pain, improving mobility and preventing future episodes.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🦵</div>
+                <h3>Bells Palsy</h3>
+                <p>Specialized facial nerve rehabilitation to restore facial muscle function and accelerate recovery from Bell's palsy.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🦴</div>
+                <h3>Joints Pain</h3>
+                <p>Comprehensive joint pain management for all major joints, reducing inflammation and improving range of motion.</p>
             </div>
             <div class="service-card fade-in">
                 <div class="service-icon">🧠</div>
-                <h3>Neuro Rehabilitation</h3>
-                <p>Expert care for neurological conditions including stroke recovery, Parkinson's management, and mobility restoration programs.</p>
+                <h3>Paralysis</h3>
+                <p>Advanced neuro-rehabilitation programs designed to maximize recovery and independence for paralysis patients.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">💆</div>
+                <div class="service-icon">👣</div>
+                <h3>Heel Pain</h3>
+                <p>Expert treatment for plantar fasciitis and other heel conditions using therapeutic interventions and customized exercise programs.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🩺</div>
+                <h3>Stroke Rehabilitation</h3>
+                <p>Comprehensive post-stroke recovery programs to restore motor function, balance, and independence in daily activities.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🦿</div>
+                <h3>Knee Pain</h3>
+                <p>Advanced treatment for all knee conditions including arthritis, ligament injuries, and post-surgical rehabilitation.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🏃</div>
+                <h3>Sports Injuries</h3>
+                <p>Specialized care for athletes with comprehensive injury management and performance optimization programs.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🦴</div>
+                <h3>Osteoarthritis</h3>
+                <p>Evidence-based treatment to manage arthritis symptoms, improve joint function, and enhance quality of life.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🔄</div>
+                <h3>Joint Replacement Rehab</h3>
+                <p>Post-operative rehabilitation programs to ensure optimal recovery and function after joint replacement surgery.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">💪</div>
+                <h3>Shoulder Impingement</h3>
+                <p>Targeted treatment for shoulder impingement syndrome to restore pain-free movement and shoulder stability.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🦴</div>
+                <h3>Herniated Disc Rehab</h3>
+                <p>Specialized care for disc herniation with focus on pain relief, core strengthening, and preventing recurrence.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">✋</div>
+                <h3>Carpal Tunnel Syndrome</h3>
+                <p>Non-surgical treatment options for carpal tunnel syndrome to relieve nerve compression and restore hand function.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🔧</div>
+                <h3>Piriformis Syndrome</h3>
+                <p>Expert management of piriformis syndrome with manual therapy and targeted exercises to eliminate sciatic-like pain.</p>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🦶</div>
+                <h3>Ankle Sprain</h3>
+                <p>Comprehensive ankle sprain rehabilitation to restore stability, strength, and prevent future ankle injuries.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Treatments Section -->
+    <section class="advanced-treatments">
+        <div class="section-header fade-in">
+            <span class="section-label">Specialized Care</span>
+            <h2>Advanced Treatment Modalities</h2>
+            <p>State-of-the-art therapeutic techniques for accelerated healing and optimal recovery</p>
+        </div>
+        <div class="advanced-grid">
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <div class="advanced-placeholder">🔵</div>
+                </div>
+                <h3>Cupping Therapy</h3>
+                <p>Ancient healing technique that improves blood circulation, reduces muscle tension, and accelerates tissue repair.</p>
+            </div>
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <div class="advanced-placeholder">🩹</div>
+                </div>
+                <h3>IASTM</h3>
+                <p>Instrument-Assisted Soft Tissue Mobilization for breaking down scar tissue and fascial restrictions.</p>
+            </div>
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <div class="advanced-placeholder">💉</div>
+                </div>
+                <h3>Dry Needling</h3>
+                <p>Precision trigger point therapy to release muscle knots, reduce pain, and restore normal muscle function.</p>
+            </div>
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <div class="advanced-placeholder">🏋️</div>
+                </div>
+                <h3>Exercise Therapy</h3>
+                <p>Customized therapeutic exercise programs designed to strengthen, stabilize, and prevent future injuries.</p>
+            </div>
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <div class="advanced-placeholder">🎗️</div>
+                </div>
+                <h3>Taping</h3>
+                <p>Kinesiology and sports taping techniques for joint support, pain reduction, and enhanced athletic performance.</p>
+            </div>
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <div class="advanced-placeholder">✋</div>
+                </div>
                 <h3>Manual Therapy</h3>
-                <p>Precision hands-on techniques for joint mobilization, myofascial release, and soft tissue manipulation for immediate pain relief.</p>
+                <p>Expert hands-on techniques including joint mobilization, soft tissue massage, and manipulation for immediate relief.</p>
             </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">⚡</div>
-                <h3>Advanced Modalities</h3>
-                <p>Cutting-edge electrotherapy, ultrasound, and laser treatments to accelerate healing and reduce inflammation effectively.</p>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="section-header fade-in">
+            <span class="section-label">Our Clinic</span>
+            <h2>Clinic Gallery</h2>
+            <p>Take a look at our modern facilities and treatment spaces</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <div class="gallery-placeholder">
+                    <span>📸</span>
+                    <p>Clinic Image 1</p>
+                </div>
             </div>
-            <div class="service-card fade-in">
-                <div class="service-icon">🎯</div>
-                <h3>Therapeutic Exercise</h3>
-                <p>Personalized movement programs designed to build strength, restore function, and prevent future injuries through targeted training.</p>
+            <div class="gallery-item fade-in">
+                <div class="gallery-placeholder">
+                    <span>📸</span>
+                    <p>Clinic Image 2</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <div class="gallery-placeholder">
+                    <span>📸</span>
+                    <p>Clinic Image 3</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <div class="gallery-placeholder">
+                    <span>📸</span>
+                    <p>Clinic Image 4</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <div class="gallery-placeholder">
+                    <span>📸</span>
+                    <p>Clinic Image 5</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <div class="gallery-placeholder">
+                    <span>📸</span>
+                    <p>Clinic Image 6</p>
+                </div>
             </div>
         </div>
     </section>
