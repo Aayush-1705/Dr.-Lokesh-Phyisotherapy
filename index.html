@@ -200,6 +200,11 @@
 
         .whatsapp-btn svg {
             fill: #25D366;
+            color: #25D366;
+        }
+
+        .whatsapp-btn svg path {
+            fill: #25D366;
         }
 
         .whatsapp-btn:hover {
@@ -208,6 +213,10 @@
         }
 
         .whatsapp-btn:hover svg {
+            fill: var(--white);
+        }
+
+        .whatsapp-btn:hover svg path {
             fill: var(--white);
         }
 
@@ -1230,7 +1239,19 @@
 
         @media (max-width: 968px) {
             nav {
-                padding: 0 2rem;
+                padding: 0 1.5rem;
+            }
+
+            .logo-text {
+                font-size: 1.25rem;
+            }
+
+            .logo-qualification {
+                font-size: 0.65rem;
+            }
+
+            .logo-subtext {
+                font-size: 0.6rem;
             }
 
             .nav-links {
@@ -1247,7 +1268,7 @@
             }
 
             .header-btn span {
-                display: none;
+                display: inline;
             }
 
             .header-btn svg {
@@ -1256,7 +1277,7 @@
             }
 
             .hero {
-                padding: 6rem 2rem 8rem;
+                padding: 4rem 2rem 6rem;
             }
 
             .hero-content,
@@ -1267,12 +1288,38 @@
             }
 
             .hero-text h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
             }
 
             .section-header h2,
-            .about-text h2 {
+            .about-text h2,
+            .contact-info h2 {
                 font-size: 2.5rem;
+            }
+
+            .section-header p {
+                font-size: 1rem;
             }
 
             .services-grid {
@@ -1294,19 +1341,22 @@
             .hero-stats {
                 grid-template-columns: 1fr;
             }
-        }
-
-        @media (max-width: 640px) {
-            .hero-text h1 {
-                font-size: 2.25rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
 
             .appointment-content {
-                padding: 2.5rem 2rem;
+                padding: 3rem 2rem;
+            }
+
+            .data-info-box {
+                padding: 1.5rem;
+            }
+
+            .data-info-box h4 {
+                font-size: 1.1rem;
+            }
+
+            .data-info-box p,
+            .data-info-box li {
+                font-size: 0.9rem;
             }
 
             .services,
@@ -1315,7 +1365,175 @@
             .contact,
             .advanced-treatments,
             .gallery {
-                padding: 5rem 1.5rem;
+                padding: 5rem 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav {
+                padding: 0 1rem;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
+            .logo-qualification {
+                font-size: 0.6rem;
+            }
+
+            .logo-subtext {
+                font-size: 0.55rem;
+            }
+
+            .header-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+            }
+
+            .header-btn span {
+                display: none;
+            }
+
+            .header-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem 5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .section-label {
+                font-size: 0.75rem;
+                padding: 0.4rem 1.2rem;
+            }
+
+            .appointment-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .appointment-content h2 {
+                font-size: 2rem;
+            }
+
+            .services,
+            .about,
+            .appointment,
+            .contact,
+            .advanced-treatments,
+            .gallery {
+                padding: 4rem 1.5rem;
+            }
+
+            .service-card,
+            .advanced-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 1.5rem;
+            }
+
+            .service-icon svg {
+                width: 30px;
+                height: 30px;
+            }
+
+            .service-card h3,
+            .advanced-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .show-more-btn {
+                padding: 0.85rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .contact-item {
+                padding: 1.5rem;
+            }
+
+            .contact-item-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .footer-logo {
+                font-size: 1.5rem;
+            }
+
+            .footer-content p {
+                font-size: 0.9rem;
+            }
+
+            .hero-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .stat-label {
+                font-size: 0.75rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .service-card,
+            .advanced-card {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .hero-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .info-item {
+                padding: 1rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 1rem 2rem;
+                font-size: 1rem;
             }
         }
 
