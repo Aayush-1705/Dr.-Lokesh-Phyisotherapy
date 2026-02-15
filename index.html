@@ -156,6 +156,63 @@
             box-shadow: 0 12px 24px rgba(26, 95, 74, 0.2);
         }
 
+        .header-btn {
+            background: var(--white);
+            color: var(--primary);
+            padding: 0.75rem 1.75rem;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .header-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .call-btn {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .call-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .call-btn svg {
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn {
+            border-color: #25D366;
+            color: #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background: #25D366;
+            color: var(--white);
+        }
+
+        .appointment-btn {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .appointment-btn:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
         .icon-button {
             background: var(--primary);
             color: var(--white);
@@ -517,10 +574,19 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 2rem;
-            font-size: 2rem;
+            font-size: 2.2rem;
             position: relative;
             z-index: 1;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            color: var(--white);
+        }
+
+        .service-icon svg {
+            width: 35px;
+            height: 35px;
+            stroke: var(--white);
+            fill: none;
+            stroke-width: 2;
         }
 
         .service-card:hover .service-icon {
@@ -576,17 +642,26 @@
         .advanced-image {
             width: 100%;
             height: 220px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .advanced-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .advanced-placeholder {
             font-size: 4rem;
             opacity: 0.3;
+            position: absolute;
+            color: var(--white);
         }
 
         .advanced-card h3 {
@@ -1082,6 +1157,20 @@
                 display: none;
             }
 
+            .header-btn {
+                padding: 0.6rem 1.25rem;
+                font-size: 0.85rem;
+            }
+
+            .header-btn span {
+                display: none;
+            }
+
+            .header-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+
             .hero {
                 padding: 6rem 2rem 8rem;
             }
@@ -1172,20 +1261,33 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#advanced">Advanced Treatments</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div style="display: flex; gap: 0.75rem; align-items: center;">
-                <a href="tel:+919999999999" class="icon-button" title="Call Now">
-                    📞
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <a href="tel:+919999999999" class="header-btn call-btn" title="Call Now">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>Call Now</span>
                 </a>
-                <a href="https://wa.me/919999999999" class="icon-button whatsapp-btn" title="WhatsApp">
+                <a href="https://wa.me/919999999999" class="header-btn whatsapp-btn" title="WhatsApp">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
+                    <span>Whatsapp</span>
                 </a>
-                <a href="#appointment" class="cta-button">Book Appointment</a>
+                <a href="#appointment" class="header-btn appointment-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    <span>Book Appointment</span>
+                </a>
             </div>
         </nav>
     </header>
@@ -1257,149 +1359,193 @@
         </div>
         <div class="services-grid">
             <div class="service-card fade-in">
-                <div class="service-icon">❄️</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
                 <h3>Frozen Shoulder</h3>
                 <p>Specialized treatment for adhesive capsulitis to restore shoulder mobility and reduce pain through advanced manual therapy techniques.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🎾</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+                </div>
                 <h3>Tennis Elbow</h3>
                 <p>Expert care for lateral epicondylitis with targeted exercises and therapeutic modalities to eliminate elbow pain and restore function.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🦴</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
                 <h3>Cervical Pain</h3>
                 <p>Comprehensive neck pain management combining manual therapy, posture correction, and strengthening exercises for lasting relief.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🔬</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
                 <h3>Sciatica</h3>
                 <p>Advanced treatment protocols for sciatic nerve pain, addressing the root cause and providing effective pain management strategies.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">💪</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
                 <h3>Low Back Pain</h3>
                 <p>Evidence-based approaches to treat acute and chronic lower back pain, improving mobility and preventing future episodes.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🦵</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
                 <h3>Bells Palsy</h3>
                 <p>Specialized facial nerve rehabilitation to restore facial muscle function and accelerate recovery from Bell's palsy.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🦴</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
                 <h3>Joints Pain</h3>
                 <p>Comprehensive joint pain management for all major joints, reducing inflammation and improving range of motion.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🧠</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                </div>
                 <h3>Paralysis</h3>
                 <p>Advanced neuro-rehabilitation programs designed to maximize recovery and independence for paralysis patients.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">👣</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                </div>
                 <h3>Heel Pain</h3>
                 <p>Expert treatment for plantar fasciitis and other heel conditions using therapeutic interventions and customized exercise programs.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🩺</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </div>
                 <h3>Stroke Rehabilitation</h3>
                 <p>Comprehensive post-stroke recovery programs to restore motor function, balance, and independence in daily activities.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🦿</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6"/></svg>
+                </div>
                 <h3>Knee Pain</h3>
                 <p>Advanced treatment for all knee conditions including arthritis, ligament injuries, and post-surgical rehabilitation.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🏃</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
                 <h3>Sports Injuries</h3>
                 <p>Specialized care for athletes with comprehensive injury management and performance optimization programs.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🦴</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+                </div>
                 <h3>Osteoarthritis</h3>
                 <p>Evidence-based treatment to manage arthritis symptoms, improve joint function, and enhance quality of life.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🔄</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+                </div>
                 <h3>Joint Replacement Rehab</h3>
                 <p>Post-operative rehabilitation programs to ensure optimal recovery and function after joint replacement surgery.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">💪</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
                 <h3>Shoulder Impingement</h3>
                 <p>Targeted treatment for shoulder impingement syndrome to restore pain-free movement and shoulder stability.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🦴</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </div>
                 <h3>Herniated Disc Rehab</h3>
                 <p>Specialized care for disc herniation with focus on pain relief, core strengthening, and preventing recurrence.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">✋</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                </div>
                 <h3>Carpal Tunnel Syndrome</h3>
                 <p>Non-surgical treatment options for carpal tunnel syndrome to relieve nerve compression and restore hand function.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🔧</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
                 <h3>Piriformis Syndrome</h3>
                 <p>Expert management of piriformis syndrome with manual therapy and targeted exercises to eliminate sciatic-like pain.</p>
             </div>
             <div class="service-card fade-in">
-                <div class="service-icon">🦶</div>
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
                 <h3>Ankle Sprain</h3>
                 <p>Comprehensive ankle sprain rehabilitation to restore stability, strength, and prevent future ankle injuries.</p>
             </div>
         </div>
     </section>
 
-    <!-- Advanced Treatments Section -->
-    <section class="advanced-treatments">
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="section-header fade-in">
-            <span class="section-label">Specialized Care</span>
-            <h2>Advanced Treatment Modalities</h2>
-            <p>State-of-the-art therapeutic techniques for accelerated healing and optimal recovery</p>
+            <span class="section-label">Our Expertise</span>
+            <h2>Comprehensive Treatment Solutions</h2>
+            <p>Evidence-based therapies tailored to accelerate your recovery and enhance your quality of life</p>
         </div>
         <div class="advanced-grid">
             <div class="advanced-card fade-in">
                 <div class="advanced-image">
-                    <div class="advanced-placeholder">🔵</div>
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Cupping Therapy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">🔵</div>
                 </div>
                 <h3>Cupping Therapy</h3>
                 <p>Ancient healing technique that improves blood circulation, reduces muscle tension, and accelerates tissue repair.</p>
             </div>
             <div class="advanced-card fade-in">
                 <div class="advanced-image">
-                    <div class="advanced-placeholder">🩹</div>
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80" alt="IASTM" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">🩹</div>
                 </div>
                 <h3>IASTM</h3>
                 <p>Instrument-Assisted Soft Tissue Mobilization for breaking down scar tissue and fascial restrictions.</p>
             </div>
             <div class="advanced-card fade-in">
                 <div class="advanced-image">
-                    <div class="advanced-placeholder">💉</div>
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80" alt="Dry Needling" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">💉</div>
                 </div>
                 <h3>Dry Needling</h3>
                 <p>Precision trigger point therapy to release muscle knots, reduce pain, and restore normal muscle function.</p>
             </div>
             <div class="advanced-card fade-in">
                 <div class="advanced-image">
-                    <div class="advanced-placeholder">🏋️</div>
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Exercise Therapy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">🏋️</div>
                 </div>
                 <h3>Exercise Therapy</h3>
                 <p>Customized therapeutic exercise programs designed to strengthen, stabilize, and prevent future injuries.</p>
             </div>
             <div class="advanced-card fade-in">
                 <div class="advanced-image">
-                    <div class="advanced-placeholder">🎗️</div>
+                    <img src="https://images.unsplash.com/photo-1594882645126-14020914d58d?w=800&q=80" alt="Taping" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">🎗️</div>
                 </div>
                 <h3>Taping</h3>
                 <p>Kinesiology and sports taping techniques for joint support, pain reduction, and enhanced athletic performance.</p>
             </div>
             <div class="advanced-card fade-in">
                 <div class="advanced-image">
-                    <div class="advanced-placeholder">✋</div>
+                    <img src="https://images.unsplash.com/photo-1612677257455-7b5f9f1d0a2e?w=800&q=80" alt="Manual Therapy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">✋</div>
                 </div>
                 <h3>Manual Therapy</h3>
                 <p>Expert hands-on techniques including joint mobilization, soft tissue massage, and manipulation for immediate relief.</p>
