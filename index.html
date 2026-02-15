@@ -198,9 +198,17 @@
             color: #25D366;
         }
 
+        .whatsapp-btn svg {
+            fill: #25D366;
+        }
+
         .whatsapp-btn:hover {
             background: #25D366;
             color: var(--white);
+        }
+
+        .whatsapp-btn:hover svg {
+            fill: var(--white);
         }
 
         .appointment-btn {
@@ -611,6 +619,45 @@
             z-index: 1;
         }
 
+        .service-card.hidden {
+            display: none;
+        }
+
+        .show-more-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .show-more-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 3rem;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .show-more-btn:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(26, 95, 74, 0.2);
+        }
+
+        .show-more-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .show-more-btn.expanded svg {
+            transform: rotate(180deg);
+        }
+
         /* Advanced Treatments Section */
         .advanced-treatments {
             padding: 8rem 3rem;
@@ -927,6 +974,43 @@
         textarea {
             resize: vertical;
             min-height: 140px;
+        }
+
+        .data-info-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px solid #0ea5e9;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .data-info-box h4 {
+            color: #0c4a6e;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .data-info-box p {
+            color: #0c4a6e;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .data-info-box ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .data-info-box li {
+            color: #0c4a6e;
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .data-info-box strong {
+            color: #075985;
+            font-weight: 600;
         }
 
         .submit-btn {
@@ -1261,10 +1345,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#advanced">Advanced Treatments</a></li>
+                <li><a href="#advanced-treatments">Advanced Treatments</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
             <div style="display: flex; gap: 1rem; align-items: center;">
                 <a href="tel:+919999999999" class="header-btn call-btn" title="Call Now">
@@ -1274,7 +1357,7 @@
                     <span>Call Now</span>
                 </a>
                 <a href="https://wa.me/919999999999" class="header-btn whatsapp-btn" title="WhatsApp">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="fill: currentColor;">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
                     <span>Whatsapp</span>
@@ -1350,6 +1433,65 @@
         </div>
     </section>
 
+    <!-- Advanced Treatments Section -->
+    <section id="advanced-treatments" class="advanced-treatments">
+        <div class="section-header fade-in">
+            <span class="section-label">Specialized Care</span>
+            <h2>Advanced Treatment Modalities</h2>
+            <p>State-of-the-art therapeutic techniques for accelerated healing and optimal recovery</p>
+        </div>
+        <div class="advanced-grid">
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Cupping Therapy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">🔵</div>
+                </div>
+                <h3>Cupping Therapy</h3>
+                <p>Ancient healing technique that improves blood circulation, reduces muscle tension, and accelerates tissue repair.</p>
+            </div>
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80" alt="IASTM" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">🩹</div>
+                </div>
+                <h3>IASTM</h3>
+                <p>Instrument-Assisted Soft Tissue Mobilization for breaking down scar tissue and fascial restrictions.</p>
+            </div>
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80" alt="Dry Needling" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">💉</div>
+                </div>
+                <h3>Dry Needling</h3>
+                <p>Precision trigger point therapy to release muscle knots, reduce pain, and restore normal muscle function.</p>
+            </div>
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Exercise Therapy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">🏋️</div>
+                </div>
+                <h3>Exercise Therapy</h3>
+                <p>Customized therapeutic exercise programs designed to strengthen, stabilize, and prevent future injuries.</p>
+            </div>
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <img src="https://images.unsplash.com/photo-1594882645126-14020914d58d?w=800&q=80" alt="Taping" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">🎗️</div>
+                </div>
+                <h3>Taping</h3>
+                <p>Kinesiology and sports taping techniques for joint support, pain reduction, and enhanced athletic performance.</p>
+            </div>
+            <div class="advanced-card fade-in">
+                <div class="advanced-image">
+                    <img src="https://images.unsplash.com/photo-1612677257455-7b5f9f1d0a2e?w=800&q=80" alt="Manual Therapy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="advanced-placeholder" style="display:none">✋</div>
+                </div>
+                <h3>Manual Therapy</h3>
+                <p>Expert hands-on techniques including joint mobilization, soft tissue massage, and manipulation for immediate relief.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="section-header fade-in">
@@ -1421,70 +1563,70 @@
                 <h3>Heel Pain</h3>
                 <p>Expert treatment for plantar fasciitis and other heel conditions using therapeutic interventions and customized exercise programs.</p>
             </div>
-            <div class="service-card fade-in">
+            <div class="service-card fade-in hidden">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </div>
                 <h3>Stroke Rehabilitation</h3>
                 <p>Comprehensive post-stroke recovery programs to restore motor function, balance, and independence in daily activities.</p>
             </div>
-            <div class="service-card fade-in">
+            <div class="service-card fade-in hidden">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6"/></svg>
                 </div>
                 <h3>Knee Pain</h3>
                 <p>Advanced treatment for all knee conditions including arthritis, ligament injuries, and post-surgical rehabilitation.</p>
             </div>
-            <div class="service-card fade-in">
+            <div class="service-card fade-in hidden">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                 </div>
                 <h3>Sports Injuries</h3>
                 <p>Specialized care for athletes with comprehensive injury management and performance optimization programs.</p>
             </div>
-            <div class="service-card fade-in">
+            <div class="service-card fade-in hidden">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
                 </div>
                 <h3>Osteoarthritis</h3>
                 <p>Evidence-based treatment to manage arthritis symptoms, improve joint function, and enhance quality of life.</p>
             </div>
-            <div class="service-card fade-in">
+            <div class="service-card fade-in hidden">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
                 </div>
                 <h3>Joint Replacement Rehab</h3>
                 <p>Post-operative rehabilitation programs to ensure optimal recovery and function after joint replacement surgery.</p>
             </div>
-            <div class="service-card fade-in">
+            <div class="service-card fade-in hidden">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </div>
                 <h3>Shoulder Impingement</h3>
                 <p>Targeted treatment for shoulder impingement syndrome to restore pain-free movement and shoulder stability.</p>
             </div>
-            <div class="service-card fade-in">
+            <div class="service-card fade-in hidden">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
                 </div>
                 <h3>Herniated Disc Rehab</h3>
                 <p>Specialized care for disc herniation with focus on pain relief, core strengthening, and preventing recurrence.</p>
             </div>
-            <div class="service-card fade-in">
+            <div class="service-card fade-in hidden">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
                 </div>
                 <h3>Carpal Tunnel Syndrome</h3>
                 <p>Non-surgical treatment options for carpal tunnel syndrome to relieve nerve compression and restore hand function.</p>
             </div>
-            <div class="service-card fade-in">
+            <div class="service-card fade-in hidden">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                 </div>
                 <h3>Piriformis Syndrome</h3>
                 <p>Expert management of piriformis syndrome with manual therapy and targeted exercises to eliminate sciatic-like pain.</p>
             </div>
-            <div class="service-card fade-in">
+            <div class="service-card fade-in hidden">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 </div>
@@ -1492,64 +1634,13 @@
                 <p>Comprehensive ankle sprain rehabilitation to restore stability, strength, and prevent future ankle injuries.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="section-header fade-in">
-            <span class="section-label">Our Expertise</span>
-            <h2>Comprehensive Treatment Solutions</h2>
-            <p>Evidence-based therapies tailored to accelerate your recovery and enhance your quality of life</p>
-        </div>
-        <div class="advanced-grid">
-            <div class="advanced-card fade-in">
-                <div class="advanced-image">
-                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Cupping Therapy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="advanced-placeholder" style="display:none">🔵</div>
-                </div>
-                <h3>Cupping Therapy</h3>
-                <p>Ancient healing technique that improves blood circulation, reduces muscle tension, and accelerates tissue repair.</p>
-            </div>
-            <div class="advanced-card fade-in">
-                <div class="advanced-image">
-                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80" alt="IASTM" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="advanced-placeholder" style="display:none">🩹</div>
-                </div>
-                <h3>IASTM</h3>
-                <p>Instrument-Assisted Soft Tissue Mobilization for breaking down scar tissue and fascial restrictions.</p>
-            </div>
-            <div class="advanced-card fade-in">
-                <div class="advanced-image">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80" alt="Dry Needling" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="advanced-placeholder" style="display:none">💉</div>
-                </div>
-                <h3>Dry Needling</h3>
-                <p>Precision trigger point therapy to release muscle knots, reduce pain, and restore normal muscle function.</p>
-            </div>
-            <div class="advanced-card fade-in">
-                <div class="advanced-image">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Exercise Therapy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="advanced-placeholder" style="display:none">🏋️</div>
-                </div>
-                <h3>Exercise Therapy</h3>
-                <p>Customized therapeutic exercise programs designed to strengthen, stabilize, and prevent future injuries.</p>
-            </div>
-            <div class="advanced-card fade-in">
-                <div class="advanced-image">
-                    <img src="https://images.unsplash.com/photo-1594882645126-14020914d58d?w=800&q=80" alt="Taping" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="advanced-placeholder" style="display:none">🎗️</div>
-                </div>
-                <h3>Taping</h3>
-                <p>Kinesiology and sports taping techniques for joint support, pain reduction, and enhanced athletic performance.</p>
-            </div>
-            <div class="advanced-card fade-in">
-                <div class="advanced-image">
-                    <img src="https://images.unsplash.com/photo-1612677257455-7b5f9f1d0a2e?w=800&q=80" alt="Manual Therapy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="advanced-placeholder" style="display:none">✋</div>
-                </div>
-                <h3>Manual Therapy</h3>
-                <p>Expert hands-on techniques including joint mobilization, soft tissue massage, and manipulation for immediate relief.</p>
-            </div>
+        <div class="show-more-container">
+            <button class="show-more-btn" id="showMoreBtn">
+                <span>Show More Services</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
         </div>
     </section>
 
@@ -1654,21 +1745,25 @@
                         <input type="text" id="name" name="name" placeholder="Enter your name" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" name="age" placeholder="Enter your age" min="1" max="120" required>
                     </div>
                 </div>
                 <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" placeholder="your.email@example.com">
                     </div>
+                </div>
+                <div class="form-row">
                     <div class="form-group">
                         <label for="date">Preferred Date *</label>
                         <input type="date" id="date" name="date" required>
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group">
                         <label for="time">Preferred Time *</label>
                         <select id="time" name="time" required>
@@ -1685,6 +1780,8 @@
                             <option value="19:00">07:00 PM</option>
                         </select>
                     </div>
+                </div>
+                <div class="form-row">
                     <div class="form-group">
                         <label for="service">Treatment Type *</label>
                         <select id="service" name="service" required>
@@ -1696,6 +1793,16 @@
                             <option value="modalities">Advanced Modalities</option>
                             <option value="exercise">Therapeutic Exercise</option>
                             <option value="consultation">General Consultation</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender">
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                 </div>
@@ -1703,6 +1810,21 @@
                     <label for="message">Describe Your Condition</label>
                     <textarea id="message" name="message" placeholder="Please share details about your symptoms, pain level, and any previous treatments..."></textarea>
                 </div>
+                
+                <!-- Data Storage Information -->
+                <div class="data-info-box">
+                    <h4>📋 Where does your information go?</h4>
+                    <p><strong>Currently:</strong> This is a demo form. Your data is displayed in the browser console (press F12 to see) but is NOT saved anywhere.</p>
+                    <p><strong>To make it functional, you need to:</strong></p>
+                    <ul>
+                        <li><strong>Option 1:</strong> Connect to an <strong>Email Service</strong> - Use services like EmailJS, Formspree, or Web3Forms to receive appointment requests via email</li>
+                        <li><strong>Option 2:</strong> Set up a <strong>Database</strong> - Use Google Sheets (via Google Apps Script), Airtable, or a proper backend (PHP/Node.js with MySQL/MongoDB)</li>
+                        <li><strong>Option 3:</strong> Use <strong>Form Submission Services</strong> - Services like Google Forms, Typeform, or JotForm can handle submissions for you</li>
+                        <li><strong>Option 4:</strong> Integrate with <strong>WhatsApp Business API</strong> - Automatically send appointment details to your WhatsApp</li>
+                    </ul>
+                    <p><strong>Recommended for small clinics:</strong> Use <strong>Google Forms</strong> (free) or <strong>EmailJS</strong> (free tier available) - both are easy to set up!</p>
+                </div>
+
                 <button type="submit" class="submit-btn">Confirm Appointment</button>
             </form>
         </div>
@@ -1746,12 +1868,6 @@
         <div class="footer-content">
             <div class="footer-logo">Dr. Lokesh Chhawry</div>
             <p>Premier Physiotherapy Care in Faridabad</p>
-            <div class="social-links">
-                <a href="#" class="social-link">📘</a>
-                <a href="#" class="social-link">📷</a>
-                <a href="#" class="social-link">💼</a>
-                <a href="#" class="social-link">📧</a>
-            </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Dr. Lokesh Chhawry Physiotherapy Clinic. All rights reserved.</p>
                 <p style="margin-top: 0.5rem;">Committed to Excellence in Movement & Recovery</p>
@@ -1783,7 +1899,24 @@
             const data = Object.fromEntries(formData);
             
             // Log data (in production, send to backend)
-            console.log('Appointment Request:', data);
+            console.log('=== APPOINTMENT REQUEST ===');
+            console.log('Name:', data.name);
+            console.log('Age:', data.age);
+            console.log('Phone:', data.phone);
+            console.log('Email:', data.email || 'Not provided');
+            console.log('Gender:', data.gender || 'Not specified');
+            console.log('Date:', data.date);
+            console.log('Time:', data.time);
+            console.log('Service:', data.service);
+            console.log('Message:', data.message || 'No message');
+            console.log('========================');
+            console.log('FULL DATA OBJECT:', data);
+            console.log('');
+            console.log('💡 To save this data:');
+            console.log('1. Set up EmailJS (https://www.emailjs.com/) - Free tier available');
+            console.log('2. Use Google Sheets API with Apps Script');
+            console.log('3. Connect to a backend server (PHP/Node.js)');
+            console.log('4. Use form services like Formspree or Web3Forms');
             
             // Show success message
             const successMessage = document.getElementById('successMessage');
@@ -1808,6 +1941,51 @@
         const dateInput = document.getElementById('date');
         const today = new Date().toISOString().split('T')[0];
         dateInput.setAttribute('min', today);
+
+        // Show More Services functionality
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const hiddenCards = document.querySelectorAll('.service-card.hidden');
+        let servicesExpanded = false;
+
+        showMoreBtn.addEventListener('click', function() {
+            servicesExpanded = !servicesExpanded;
+            
+            hiddenCards.forEach((card, index) => {
+                if (servicesExpanded) {
+                    setTimeout(() => {
+                        card.classList.remove('hidden');
+                        card.classList.add('visible');
+                    }, index * 100);
+                } else {
+                    card.classList.add('hidden');
+                    card.classList.remove('visible');
+                }
+            });
+
+            if (servicesExpanded) {
+                showMoreBtn.innerHTML = `
+                    <span>Show Less Services</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                `;
+                showMoreBtn.classList.add('expanded');
+            } else {
+                showMoreBtn.innerHTML = `
+                    <span>Show More Services</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                `;
+                showMoreBtn.classList.remove('expanded');
+                
+                // Scroll to services section when collapsing
+                document.getElementById('services').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
+        });
 
         // Intersection Observer for fade-in animations
         const observerOptions = {
